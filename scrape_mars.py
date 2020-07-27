@@ -4,6 +4,8 @@ import requests
 from splinter import Browser
 from selenium import webdriver
 import pandas as pd
+from flask import Flask, render_template
+import pymongo
 
 def init_browser():
     # @NOTE: Replace the path with your actual path to the chromedriver
@@ -22,7 +24,7 @@ def scrape():
     soup = BeautifulSoup(html, "html.parser")
 
     # Get the content title
-    mars_dict["article title"] = browser.find_by_css("div.content_title a").text
-    mars_dict["article body"] = soup.find('div', class_='article_teaser_body').text
+    mars_dict["title"] = browser.find_by_css("div.content_title a").text
+    mars_dict["body"] = soup.find('div', class_='article_teaser_body').text
     
     return mars_dict
