@@ -20,7 +20,8 @@ db.test.drop() # <----- DELETE
 db.feat_img.drop()
 
 # Insert data into the database
-db.intro.insert([{'title': '', 'body': '', 'url': ""}])
+db.intro.insert([{'title': '', 'body': '', 'url': "",
+    'weather': ""}])
 
 # # Check if second dictionary can be added
 # feat_img = db.feat_img

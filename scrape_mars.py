@@ -27,11 +27,8 @@ def scrape():
     mars_dict["title"] = browser.find_by_css("div.content_title a").text
     mars_dict["body"] = browser.find_by_css("div.article_teaser_body").text
     
-    # browser.quit()
-    # # return mars_dict
-
+    
     # PART 2 - Scrape the image
-    # URL of page to be scraped
     jpl_url = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
     browser.visit(jpl_url)
     time.sleep(2) # add delay to let the page fully load
@@ -53,7 +50,26 @@ def scrape():
     # Get the content title
     mars_dict["url"] = featured_image_url
     
+    
+    # # PART 3 - Current weather on Mars
+    # mars_url = 'https://twitter.com/marswxreport?lang=en'
+    # browser.visit(mars_url)
+    # html = browser.html
+    # time.sleep(5)
+    # soup = BeautifulSoup(html, 'html.parser')
+    # tweets = soup.find_all('span') #, class_='css-901oao css-16my406 r-1qd0xha r-ad9z0x r-bcqeeo r-qvutc0')
+    # time.sleep(5)
 
-
+    # tweets_list = []
+    # for tweet in tweets:
+    #     mars_weather = tweet.find('p').text
+    #     if "InSight" in tweet.text: 
+    #         # tweets_list.append(tweet.text)
+    #         break
+    #     else:
+    #         pass
+    # mars_dict["weather"] = tweets_list[0]
+    
+    
     return mars_dict
 
