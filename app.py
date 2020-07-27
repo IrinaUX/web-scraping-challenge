@@ -18,15 +18,11 @@ db = client.mars_db
 db.intro.drop()
 
 # Insert data into the database
-db.intro.insert_many(
+db.intro.insert(
     [
         {
-            'Title': 'Jessica',
-            'position': 'Point Guard'
-        },
-        {
-            'player': 'Mark',
-            'position': 'Center'
+            'title': '',
+            'body': ''
         }
     ]
 )
