@@ -16,17 +16,15 @@ db = client.mars_db
 
 # Drops collection if available to remove duplicates
 db.intro.drop()
+db.test.drop() # <----- DELETE
+db.feat_img.drop()
 
 # Insert data into the database
-db.intro.insert(
-    [
-        {
-            'title': '',
-            'body': ''
-        }
-    ]
-)
+db.intro.insert([{'title': '', 'body': '', 'url': ""}])
 
+# # Check if second dictionary can be added
+# feat_img = db.feat_img
+# feat_img.insert_many([{"name": "", "link": ""}])
 
 
 # Use flask_pymongo to set up mongo connection
@@ -35,7 +33,6 @@ mongo = PyMongo(app)
 
 # Or set inline
 # mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_db")
-
 
 @app.route("/")
 def index():
@@ -48,8 +45,13 @@ def scraper():
     intro = mongo.db.intro
     intro_data = scrape_mars.scrape()
     intro.update({}, intro_data, upsert=True)
-    return redirect("/", code=302)
+    # return redirect("/", code=302)
 
+    # feat_img = mongo.db.feat_img
+    # feat_img_data = scrape_mars.scrape()
+    # intro.update({}, intro_data, upsert=True)
+    
+    return redirect("/", code=302)
 
 if __name__ == "__main__":
     app.run(debug=True)
