@@ -52,10 +52,28 @@
           </div>
         </div> 
       </div>
-    </div>
+    </div><br>
   
+    <!-- Part 5 - Hemispheres -->
     
+    <div class = "row" id = "hemisphere image">
+      <div class = "col-md-12">
+          <h3 style="text-align: center"><b>Mars Hemispheres</b></h3><br>
+          
+          {% for hemi in intro.hemispheres%}
+          <div class = "col-md-6">
+                <div class = "thumbnail">
+                  <h4>{{hemi.title}} </h4>
+                  <img class = "img" src="{{hemi.img_url}}" style="max-width:90%" alt="Hemisphere Images">
+                </div> <!--   end thumbnail -->
+          </div>  <!--  end col-md -->
+         {% endfor %}               
 
+        </div>
+      </div>
+    
+    
+    
   </div>
 </body>
 

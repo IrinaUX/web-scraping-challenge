@@ -98,17 +98,40 @@ def scrape():
     mars_df.columns = ['Description','Value']
     mars_df.set_index('Description', inplace=True)
     html_table = mars_df.to_html()
-    # browser.visit(facts_url)
-    # # html = browser.html
-    # # soup = BeautifulSoup(html, 'html.parser')
-    # df = pd.read_html(facts_url)
-    # mars_table_df = df[1]
-    # mars_table_df.columns = ['description', 'value']
-    # mars_table_df = mars_table_df.to_frame()
-    # html_table = mars_table_df.to_html(header = True, index = False)
-    # # mars_dict['Description', 'Value'] = html_table
     mars_dict['table'] = html_table
     
     
+    # PART 5 - Hemisphere images
+
+    hemi_url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
+    executable_path = {'executable_path': '/usr/local/bin/chromedriver'}
+    browser = Browser('chrome', **executable_path, headless=False)
+    browser.visit(hemi_url)
+    time.sleep(4)
+    links = browser.find_by_css("a.product-item h3")
+
+    img_info_summary = []
+    for i in range(len(links)):
+        hemi_dict = {}  
+        
+        # Open the browser, find the link for the image. Click on the link.
+        browser.visit(hemi_url)
+        browser.find_by_css("a.product-item h3")[i].click() 
+        
+        # Get text from the page title header 2
+        hemi_dict['title'] = browser.find_by_css("h2.title").text
+        
+        # click on "sample"
+        sample_elem = browser.links.find_by_text('Sample').first
+        hemi_dict['img_url'] = sample_elem['href']
+        
+        # # parse to html
+        # html = browser.html
+        # soup = BeautifulSoup(html, 'html.parser')
+        
+        img_info_summary.append(hemi_dict)
+        mars_dict["hemispheres"] = img_info_summary
+
+
     return mars_dict
 
