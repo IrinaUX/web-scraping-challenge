@@ -17,7 +17,7 @@
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
     </div>
 
-    <!-- Mars data - Part 1 - Intro -->
+    <!-- Part 1 - Intro -->
     <div class="row" id="mars-intro">
       <div class="col-md-12">
         <h4 class="heading">Latest Mars News</h4>
@@ -26,22 +26,48 @@
       </div>
     </div><br>
 
-    <!-- Mars data - Part 2 - Featured Mars Image -->
+
+    <div class="row" id="mars-image">
+      <div class = "col-md-8">
+        <h4><b>Featured Mars Image</b></h4>
+        <img class = "img-responsive" src="{{intro.url}}" style="max-width:90%;">
+      </div>
+    
+      <div class = " col-md-4" id="table">
+        <div class = "card" style ="width: 100%;">
+          <div class="card-body text-black">
+            <h4 class="card-title;">Current Weather on Mars</h4>
+              <p class="card-text" >{{intro.weather}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Part 2 - Featured Mars Image
     <div class="row" id="mars-ft-img">
       <div class="col-md-12">
         <h4 class="heading">Featured Mars Image</h4>
-        <img class="img-responsive" src="{{intro.url}}" style="max-width: 50%;"
+        <img class="img-responsive" src="{{intro.url}}" style="max-width: 70%;"
       </div>
     </div>
   
-    <!-- Mars data - Part 3 - Current weather on Mars -->
-    <div class="row" id="mars-ft-img">
+    # Part 3 - Current weather on Mars -->
+    <!-- <div class="row" id="mars-ft-img">
       <div class="col-md-12">
         <h4 class="heading">Current Weather on Mars</h4>
-        <img class="card-text" src="{{intro.weather}}"
+        <small>{{intro.weather}}></small>
       </div>
-    </div>
+    </div> -->
+
+    <!-- Part 4 - Mars facts
+    <div class="row" id="mars-ft-img">
+      <div class="col-md-12">
+        <h4 class="heading">Mars Facts</h4>
+        <img class="card-text" src="{{intro.table}}"
+      </div>
+    </div> -->
   
+    
 
   </div>
 </body>
