@@ -90,9 +90,14 @@ def scrape():
     browser.quit()
 
     
-    # # PART 4 - Mars facts
+    # PART 4 - Mars facts
 
-    # facts_url = 'https://space-facts.com/mars/'
+    facts_url = 'https://space-facts.com/mars/'
+    mars_facts = pd.read_html(facts_url)
+    mars_df = mars_facts[0]
+    mars_df.columns = ['Description','Value']
+    mars_df.set_index('Description', inplace=True)
+    html_table = mars_df.to_html()
     # browser.visit(facts_url)
     # # html = browser.html
     # # soup = BeautifulSoup(html, 'html.parser')
@@ -102,7 +107,7 @@ def scrape():
     # mars_table_df = mars_table_df.to_frame()
     # html_table = mars_table_df.to_html(header = True, index = False)
     # # mars_dict['Description', 'Value'] = html_table
-    # # mars_dict['table'] = html_table
+    mars_dict['table'] = html_table
     
     
     return mars_dict
