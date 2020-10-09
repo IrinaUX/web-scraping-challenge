@@ -62,31 +62,35 @@ def scrape():
     time.sleep(5)
     #results = weather_soup.find_all("div", { "data-testid" : "tweet" })
     #results = browser.find_by_css('div[data-testid="tweet"]') 
-    mars_weather = browser.find_by_css('#react-root > div > div > div.css-1dbjc4n.r-13qz1uu.r-417010 > main > div > div > div > div.css-1dbjc4n.r-14lw9ot.r-1tlfku8.r-1ljd8xs.r-13l2t4g.r-1phboty.r-1jgb5lz.r-1ye8kvj.r-13qz1uu.r-184en5c > div > div > div > div > div:nth-child(3) > section > div > div > div > div:nth-child(1) > div > div > article > div > div > div > div.css-1dbjc4n.r-18u37iz > div.css-1dbjc4n.r-1iusvr4.r-16y2uox.r-1777fci.r-1mi0q7o > div:nth-child(2) > div:nth-child(1) > div > span')
+
+     # 5-Sep-2020 Irina: commented out as this css object was no longer found
+    # mars_weather = browser.find_by_css('#react-root > div > div > div.css-1dbjc4n.r-13qz1uu.r-417010 > main > div > div > div > div.css-1dbjc4n.r-14lw9ot.r-1tlfku8.r-1ljd8xs.r-13l2t4g.r-1phboty.r-1jgb5lz.r-1ye8kvj.r-13qz1uu.r-184en5c > div > div > div > div > div:nth-child(3) > section > div > div > div > div:nth-child(1) > div > div > article > div > div > div > div.css-1dbjc4n.r-18u37iz > div.css-1dbjc4n.r-1iusvr4.r-16y2uox.r-1777fci.r-1mi0q7o > div:nth-child(2) > div:nth-child(1) > div > span')
     
-    mars_weather = mars_weather[0].text
-    print(f"+++++{mars_weather}")
+    # mars_weather = mars_weather[0].text
+    # print(f"+++++{mars_weather}")
 
-    time.sleep(5)
-    print("IRINA _ SLEEP")
+    # time.sleep(5)
+    # print("IRINA _ SLEEP")
 
-    #spans = results.findAll('span') #, class_='css-901oao css-16my406 r-1qd0xha r-ad9z0x r-bcqeeo r-qvutc0')
-    time.sleep(5)
-    print("spans found")
+    # #spans = results.findAll('span') #, class_='css-901oao css-16my406 r-1qd0xha r-ad9z0x r-bcqeeo r-qvutc0')
+    # time.sleep(5)
+    # print("spans found")
 
-    # tweets_list = []
-    # for span in spans:
+    # # tweets_list = []
+    # # for span in spans:
         
-    # # mars_weather = span.find('p').text
-    #     if "InSight" in span.text: 
-    #         tweets_list.append(span.text)
-    #         break
-    #     else:
-    #         pass
-    # mars_dict["weather"] = tweets_list
-    # mars_dict["weather"] = results
-    # mars_dict["weather"] = weather_soup.find_all('p',class_="tweet-text")[2].text
-    mars_dict["weather"] = mars_weather
+    # # # mars_weather = span.find('p').text
+    # #     if "InSight" in span.text: 
+    # #         tweets_list.append(span.text)
+    # #         break
+    # #     else:
+    # #         pass
+    # # mars_dict["weather"] = tweets_list
+    # # mars_dict["weather"] = results
+    # # mars_dict["weather"] = weather_soup.find_all('p',class_="tweet-text")[2].text
+    # mars_dict["weather"] = mars_weather
+    # 5-Sep-2020, Irina -- end comment ---
+    
     browser.quit()
 
     
