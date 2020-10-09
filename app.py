@@ -8,14 +8,15 @@ app = Flask(__name__)
 
 # Create connection variable
 # conn = 'mongodb://localhost:27017'
-conn = 'mongodb+srv://username:password@ml-mongo-db.p34ii.mongodb.net/test'
+conn = f'mongodb+srv://{username}:{password}@ml-mongo-db.p34ii.mongodb.net'
 
 
 # Pass connection to the pymongo instance.
 client = pymongo.MongoClient(conn)
 
 # Connect to a database. Will create one if not already available.
-db = client.mars_db
+##(IK)db = client.mars_db
+db = client.ml_img_recogn_db
 
 # Drops collection if available to remove duplicates
 db.intro.drop()
@@ -32,7 +33,9 @@ db.intro.insert([{'title': '', 'body': '', 'url': "",
 
 
 # Use flask_pymongo to set up mongo connection
-app.config["MONGO_URI"] = "mongodb://localhost:27017/mars_db"
+##(IK) app.config["MONGO_URI"] = "mongodb://localhost:27017/mars_db"
+uri = f"mongodb+srv://{username}:{password}@ml-mongo-db.p34ii.mongodb.net/ml_img_recogn"
+app.config["MONGO_URI"] = uri
 mongo = PyMongo(app)
 
 # Or set inline

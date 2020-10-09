@@ -21,13 +21,13 @@ botocore=1.18.10=pyh9f0ad1d_0
 brotlipy=0.7.0=py38haf1e3a3_1000
 bs4=4.9.1=0
 bzip2=1.0.8=haf1e3a3_3
-ca-certificates=2020.6.20=hecda079_0
+ca-certificates=2020.7.22=0
 cachetools=4.1.1=py_0
 cairo=1.16.0=h0ab9d94_1001
 catalogue=1.0.0=py_0
 cctools_osx-64=949.0.1=h5ba7a2e_7
 census=0.8.14=pypi_0
-certifi=2020.6.20=py38h5347e94_2
+certifi=2020.6.20=py38_0
 cffi=1.14.0=py38hb5b8e2f_0
 chardet=3.0.4=py38_1003
 citipy=0.0.5=pypi_0
@@ -49,6 +49,7 @@ decorator=4.4.2=py_0
 defusedxml=0.6.0=py_0
 dill=0.3.2=pypi_0
 dm-tree=0.1.5=pypi_0
+dnspython=1.16.0=py38_0
 en-core-web-sm=2.3.1=pypi_0
 entrypoints=0.3=py38_0
 et-xmlfile=1.0.1=pypi_0
@@ -128,7 +129,7 @@ keras-preprocessing=1.1.2=pypi_0
 kiwisolver=1.2.0=py38h04f5b5a_0
 krb5=1.16.4=hddcf347_0
 lame=3.100=h1de35cc_1001
-lasagne=0.1=pypi_0
+lasagne=0.2.dev1=pypi_0
 lazy-object-proxy=1.4.3=py38h1de35cc_0
 lcms2=2.11=h174193d_0
 ld64_osx-64=530=h3c32e8a_7
