@@ -136,6 +136,7 @@ def scrape():
         img_info_summary.append(hemi_dict)
         mars_dict["hemispheres"] = img_info_summary
 
+    browser.quit()
 
     return mars_dict
 
